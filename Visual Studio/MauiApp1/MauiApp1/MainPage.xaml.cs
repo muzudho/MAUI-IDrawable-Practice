@@ -78,6 +78,9 @@ public partial class MainPage : ContentPage
 
                     //// 作業中のタイル・セット画像の再描画
                     //context.RefreshWorkingTileSetImage();
+
+                    // 必ず再描画が行われるわけではない
+                    graphicsView1.Invalidate();
                 }
             }
             catch (Exception ex)

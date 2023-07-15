@@ -41,7 +41,8 @@
 
             <!-- ２Ｄ描画を行うなら GraphicsView がキャンバスになる -->
             <GraphicsView HorizontalOptions="Center"
-                          WidthRequest="100" HeightRequest="100">
+                          WidthRequest="100" HeightRequest="100"
+                          x:Name="graphicsView1">
                 <GraphicsView.Drawable>
                     <local:SimpleDrawing BindingContext="{x:Reference thisContentPage}"
                                          SourceImage="{Binding MainPageVM.Image}"/>
