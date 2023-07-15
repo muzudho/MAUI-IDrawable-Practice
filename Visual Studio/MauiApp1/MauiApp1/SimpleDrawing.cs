@@ -41,10 +41,13 @@
         /// <param name="dirtyRect">位置とサイズ</param>
         public void Draw(ICanvas canvas, RectF dirtyRect)
         {
+            // 画像を描く
+            canvas.DrawImage(this.SourceImage, 0, 0, 64, 64);
+
+            // 線を引く
             canvas.StrokeColor = Colors.Red;
             canvas.DrawLine(0, 0, 100, 100);
-
-            canvas.DrawImage(this.SourceImage, 0, 0, 64, 64);
+            canvas.StrokeSize = 4.0f;
         }
         #endregion
     }

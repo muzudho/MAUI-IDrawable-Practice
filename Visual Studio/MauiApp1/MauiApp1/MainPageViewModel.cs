@@ -12,14 +12,46 @@
     /// </summary>
     public class MainPageViewModel : ObservableObject
     {
+        // - パブリック・プロパティ
+
+        #region プロパティ（画像ファイルパス）
+        string imageFilePath = @"C:\Users\むずでょ\Documents\GitHub\MAUI-IDrawable-Practice\Workspace\adventure_field.png";
+
         /// <summary>
         ///     画像ファイルパス
         /// </summary>
-        public string ImageFilePath { get; set; } = @"C:\Users\むずでょ\Documents\GitHub\MAUI-IDrawable-Practice\Workspace\adventure_field.png";
+        public string ImageFilePath
+        {
+            get => this.imageFilePath;
+            set
+            {
+                if (this.imageFilePath!=value)
+                {
+                    this.imageFilePath = value;
+                    this.OnPropertyChanged(nameof(ImageFilePath));
+                }
+            }
+        }
+        #endregion
+
+        #region プロパティ（画像）
+        TheGraphics.IImage image;
 
         /// <summary>
         ///     画像
         /// </summary>
-        public TheGraphics.IImage Image { get; set; }
+        public TheGraphics.IImage Image
+        {
+            get => this.image;
+            set
+            {
+                if (this.image != value)
+                {
+                    this.image = value;
+                    this.OnPropertyChanged(nameof(Image));
+                }
+            }
+        }
+        #endregion
     }
 }

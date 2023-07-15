@@ -8,7 +8,6 @@ using System.Diagnostics;
 using System.Net;
 #endif
 
-using TheGraphics = Microsoft.Maui.Graphics;
 
 public partial class MainPage : ContentPage
 {
@@ -60,9 +59,9 @@ public partial class MainPage : ContentPage
                 {
 #if IOS || ANDROID || MACCATALYST
                     // PlatformImage isn't currently supported on Windows.
-                    TheGraphics.IImage image = PlatformImage.FromStream(inputFileStream);
+                    bindingContext.Image = PlatformImage.FromStream(inputFileStream);
 #elif WINDOWS
-                    TheGraphics.IImage image = new W2DImageLoadingService().FromStream(inputFileStream);
+                    bindingContext.Image = new W2DImageLoadingService().FromStream(inputFileStream);
 #endif
 
                     ////
