@@ -44,10 +44,19 @@
             // 画像を描く
             canvas.DrawImage(this.SourceImage, 0, 0, 64, 64);
 
+            // 矩形を塗りつぶす
+            canvas.FillColor = new Color(220, 220, 255, 96);
+            canvas.FillRectangle(40, 50, 20, 20);
+
+            // 矩形を引く
+            canvas.StrokeColor = Colors.Green;
+            canvas.StrokeSize = 2.0f;
+            canvas.DrawRectangle(40, 50, 20, 20);
+
             // 線を引く
             canvas.StrokeColor = Colors.Red;
-            canvas.DrawLine(0, 0, 100, 100);
             canvas.StrokeSize = 4.0f;
+            canvas.DrawLine(0, 0, 100, 100);
         }
         #endregion
     }

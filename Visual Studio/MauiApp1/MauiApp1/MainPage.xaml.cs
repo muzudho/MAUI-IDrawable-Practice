@@ -64,6 +64,9 @@ public partial class MainPage : ContentPage
                     bindingContext.Image = new W2DImageLoadingService().FromStream(inputFileStream);
 #endif
 
+                    // 必ず再描画が行われるわけではない
+                    graphicsView1.Invalidate();
+
                     ////
                     //// 作業中のタイル・セット画像の保存
                     ////
@@ -78,9 +81,6 @@ public partial class MainPage : ContentPage
 
                     //// 作業中のタイル・セット画像の再描画
                     //context.RefreshWorkingTileSetImage();
-
-                    // 必ず再描画が行われるわけではない
-                    graphicsView1.Invalidate();
                 }
             }
             catch (Exception ex)
